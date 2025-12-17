@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Wigrum';
+  src: url('./Wigrum-Regular.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Wigrum', sans-serif !important;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Estilo Glassmorphism exacto */
+.glass-card {
+  /* Fondo blanco muy transparente */
+  background: rgba(255, 255, 255, 0.1); 
+  
+  /* El secreto: desenfoque del fondo */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  /* Borde fino y brillante */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* Sombra suave para dar profundidad */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  border-radius: 24px; /* Bordes redondeados modernos */
+  color: white;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.glass-card h2 {
+  font-size: 3.5em;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2; /* Muy al fondo */
+}
+
+/* Capa de oscurecimiento global para que el texto sea legible */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Ajusta el 0.4 para más o menos brillo */
+  z-index: -1;
+}
+
+/* Ajustamos el contenedor de React para que sea transparente */
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+  background: transparent; /* Importante: quitamos el color/imagen anterior */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.titulo-public-display {
+ width: 100%;
+}
+
+.titulo-public-display img {
+  width: 100%;
+  height: auto;
+}
