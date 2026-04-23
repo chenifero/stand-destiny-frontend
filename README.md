@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🖥️ Stand Destiny — Frontend
 
-## Available Scripts
+**Aplicación web para la gestión en tiempo real de un stand o punto de atención.**
 
-In the project directory, you can run:
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![WebSocket](https://img.shields.io/badge/WebSocket-010101?style=for-the-badge&logo=socket.io&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 ¿Qué hace esta aplicación?
 
-### `npm test`
+**Stand Destiny** es una web app en tiempo real que permite gestionar un stand o punto de servicio. Tiene dos vistas diferenciadas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🌐 **Vista Pública** — Pantalla para clientes que muestra el estado actual del stand en tiempo real.
+- 🔐 **Panel de Control** — Interfaz privada (solo admin) para gestionar el contenido mostrado en la pantalla pública.
 
-### `npm run build`
+La comunicación entre el panel de control y la pantalla pública ocurre de forma **instantánea mediante WebSockets**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🗂️ Arquitectura
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+stand-destiny-frontend/
+│
+├── src/
+│   ├── App.js                  → Rutas principales (/ y /admin)
+│   ├── PublicDisplay.js        → Vista pública (pantalla del stand)
+│   ├── ControlPanel.js         → Panel de control interno
+│   ├── ProtectedControlPanel.js → Panel con autenticación de acceso
+│   ├── useWebSocket.js         → Hook para la conexión WebSocket en tiempo real
+│   └── App.css / index.css     → Estilos globales
+│
+└── public/                     → Archivos estáticos
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🔀 Rutas de la Aplicación
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Ruta | Vista | Acceso |
+|------|-------|--------|
+| `/` | Pantalla pública del stand | 🌐 Público |
+| `/admin` | Panel de control con autenticación | 🔐 Admin |
+| `/*` | 404 - Ruta no encontrada | — |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚡ Tecnologías
 
-## Learn More
+| Tecnología | Uso |
+|---|---|
+| **React** | Framework de la interfaz |
+| **React Router DOM** | Navegación entre vistas |
+| **WebSocket** | Comunicación en tiempo real |
+| **Lucide React** | Iconografía |
+| **Create React App** | Configuración base del proyecto |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🌐 Despliegue
 
-### Code Splitting
+| Servicio | Rol |
+|---|---|
+| **Vercel** | Hosting del frontend |
+| **Render** | Servidor backend (WebSocket + API) |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📁 Repositorios del Proyecto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Repositorio | Descripción |
+|---|---|
+| 📦 `stand-destiny-frontend` | Este repositorio — Interfaz de usuario |
+| ⚙️ `stand-destiny-backend` | Servidor, WebSocket y lógica de negocio |
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<div align="center">
 
-### Advanced Configuration
+**Frontend en producción en Vercel · Backend en Render 🚀**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</div>
