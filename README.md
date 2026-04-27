@@ -48,7 +48,6 @@ stand-destiny-frontend/
 |------|-------|--------|
 | `/` | Pantalla pública del stand | 🌐 Público |
 | `/admin` | Panel de control con autenticación | 🔐 Admin |
-| `/*` | 404 - Ruta no encontrada | — |
 
 ---
 
